@@ -15,4 +15,10 @@ export default makeStyles(() => ({
   image: {
     marginLeft: '15px',
   },
+  grid: {
+    display: 'flex',
+    justifyContent: "space-between",
+     alignItems: "stretch",
+    
+  }
 }));
