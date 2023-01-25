@@ -18,7 +18,8 @@ export default makeStyles(() => ({
   grid: {
     display: 'flex',
     justifyContent: "space-between",
-     alignItems: "stretch",
-    
+    // alignItems: "stretch",
+    gap: "1rem"
+
   }
 }));
