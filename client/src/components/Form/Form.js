@@ -14,7 +14,8 @@ function Form({ currentId, setCurrentId }) {
         tags: '',
         selectedFile: ''
     })
-    const post = useSelector((state)=> currentId === undefined ? null  : state.posts.find(p => p._id === currentId))
+
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
 
     const classes = useStyles();
 
@@ -26,7 +27,7 @@ function Form({ currentId, setCurrentId }) {
     },[post])
 
     const clear = () => {
-        // setCurrentId(0)
+        setCurrentId(0)
         setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
       }
 
@@ -40,7 +41,7 @@ function Form({ currentId, setCurrentId }) {
 
             dispatch(createPost(postData))
         }
-        // clear()
+        clear()
 
     }
 
@@ -81,7 +82,7 @@ function Form({ currentId, setCurrentId }) {
                     label="Tags"
                     fullWidth
                     value={postData.tags}
-                    onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+                    onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',')})}
                     />
                 <div className={classes.fileInput}>
                     <FileBase
