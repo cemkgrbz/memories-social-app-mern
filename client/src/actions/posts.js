@@ -27,6 +27,7 @@ export const createPost = (post) => async (dispatch) => {
     } catch (error) {
         
         console.log(error)
+        alert("Please control your memory and be sure if you provide valid creator, title and message!!")
     }
 }
 

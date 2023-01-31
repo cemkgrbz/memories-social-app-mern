@@ -36,6 +36,10 @@ function Form({ currentId, setCurrentId }) {
 
         if(currentId) {
 
+            if(postData.creator === "") {
+                alert("Please type a creator name")
+            }
+
             dispatch(updatePost(currentId, postData))
         } else {
 

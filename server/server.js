@@ -5,7 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import postRoutes from "./routes/postRoutes.js";
 import db from './config/db.js'
-import path from 'path'
+// import path from 'path'
 
 
 dotenv.config();
@@ -34,11 +34,11 @@ app.listen(port, () => console.log('Server is up and running at port', port))
 
 // mongoose.set("useFindAndModify", false);
 
-app.use(express.static('client/build'));
+// app.use(express.static('client/build'));
 
-if( process.env.NODE_ENV === 'production' ) {
+// if( process.env.NODE_ENV === 'production' ) {
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+//     })
+// }
