@@ -9,6 +9,7 @@ export const signin = (formData, history) => async (dispatch) => {
     history.push('/');
   } catch (error) {
     console.log(error);
+    alert("Wrong email or password!!")
   }
 };
 
