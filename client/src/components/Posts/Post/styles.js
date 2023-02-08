@@ -43,7 +43,7 @@ export default makeStyles({
     margin: '20px',
   },
   title: {
-    padding: '0 16px',
+    // padding: '0 16px',
     cursor:"pointer",
     fontFamily: 'Josefin Sans',
     fontSize: '1.5rem'
@@ -67,6 +67,12 @@ export default makeStyles({
   },
   author: {
     fontFamily: 'Josefin Sans',
-    fontSize: '1.3rem'
+    fontSize: '1.1rem',
+    textAlign: 'right',
+    marginRight: '1rem'
+  },
+  time: {
+    fontFamily: 'Josefin Sans',
+    marginTop:  "7rem"
   }
 });

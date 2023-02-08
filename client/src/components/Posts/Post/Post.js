@@ -49,8 +49,8 @@ function Post({ post, setCurrentId }) {
           <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
 
           <div className={classes.overlay}>
-            <Typography className={classes.author}>{post.name}</Typography>
-            <Typography className={classes.author}>{moment(post.createdAt).fromNow()}</Typography>
+          <Typography className={classes.title} gutterBottom onClick={openPost}>{post.title}</Typography>
+            <Typography className={classes.time}>{moment(post.createdAt).fromNow()}</Typography>
           </div>
           {(user?.result?._id === post?.creator) && (
           <div className={classes.overlay2}>
@@ -64,7 +64,8 @@ function Post({ post, setCurrentId }) {
           <div className={classes.details}>
             <Typography color="textSecondary">{post.tags.map((tag) => `#${tag}`)}</Typography>
           </div>
-          <Typography className={classes.title} gutterBottom onClick={openPost}>{post.title}</Typography>
+          <Typography className={classes.author}>By {post.name}</Typography>
+
 
           <CardContent>
             <Typography className={classes.text} color="textSecondary" component="p"> 

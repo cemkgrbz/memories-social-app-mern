@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import banner from './images/banner.png';
 
 export default makeStyles((theme) => ({
   appBar: {
@@ -19,5 +20,12 @@ export default makeStyles((theme) => ({
     mainContainer: {
       flexDirection: "column-reverse"
     }
+  },
+  banner: {
+    margin: "2rem",
+    border: "1px solid white",
+    padding: "3rem",
+    color: "white",
+    backgroundImage: `url(${banner})`
   }
 }));

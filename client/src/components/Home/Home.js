@@ -23,7 +23,10 @@ function Home() {
   
     }, [currentId, dispatch]);
 
-    return ( 
+    return ( <>
+        <div className={classes.banner}>
+        Let's improve our Blog together. Feel free to tell us some road stories!
+        </div>
         <Grow in>
             <Container>
                 <Grid className={classes.mainContainer} container
@@ -34,14 +37,13 @@ function Home() {
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Form currentId={currentId} setCurrentId={setCurrentId} />
-                    {/* <Paper className={classes.pagination} elevation={6}>
-                        <Pagination />
-                    </Paper> */}
+                    
                 </Grid>
                 </Grid>
             </Container>
         </Grow>
-     );
+    </>
+ );
 }
 
 export default Home; 

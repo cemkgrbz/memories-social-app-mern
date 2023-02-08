@@ -62,7 +62,7 @@ function Form({ currentId, setCurrentId }) {
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">
-                    {currentId ? 'Editing' : 'Creating'} a Blog Post
+                    {currentId ? 'Edit' : 'Create'} a Blog Post
                 </Typography>
                 {/* <TextField
                     name="creator"
@@ -105,8 +105,8 @@ function Form({ currentId, setCurrentId }) {
                         onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })}
                     />
                 </div>
-                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-                <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+                <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" color="secondary" fullWidth>Submit</Button>
+                <Button variant="contained"  size="small" onClick={clear} fullWidth>Clear</Button>
 
             </form>
 

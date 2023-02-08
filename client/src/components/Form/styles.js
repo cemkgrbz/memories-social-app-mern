@@ -24,6 +24,7 @@ export default makeStyles((theme) => ({
   buttonSubmit: {
     marginBottom: 10,
     fontFamily: 'Josefin Sans',
+    color: "white"
 
   },
 }));
