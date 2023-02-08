@@ -11,4 +11,9 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: 'center',
   },
+  typography: {
+    fontFamily: [
+      'Josefin Sans'
+  ]
+  },
 }));

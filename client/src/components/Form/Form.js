@@ -62,7 +62,7 @@ function Form({ currentId, setCurrentId }) {
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">
-                    {currentId ? 'Editing' : 'Creating'} a Memory
+                    {currentId ? 'Editing' : 'Creating'} a Blog Post
                 </Typography>
                 {/* <TextField
                     name="creator"
@@ -84,7 +84,9 @@ function Form({ currentId, setCurrentId }) {
                     name="message"
                     variant="outlined"
                     label="Message"
-                    fullWidth
+                    fullWidth 
+                    multiline 
+                    rows={10} 
                     value={postData.message}
                     onChange={(e) => setPostData({ ...postData, message: e.target.value })}
                     />

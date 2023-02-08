@@ -1,6 +1,6 @@
 import React from "react"
 import useStyles from './styles'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core'
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core'
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
 import DeleteIcon from '@material-ui/icons/Delete'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
@@ -8,15 +8,13 @@ import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import moment from 'moment'
 import { useDispatch, useSelector } from "react-redux"
 import { deletePost, likePost } from "../../../actions/posts"
+import { Link, useHistory } from "react-router-dom"
 
 
 function Post({ post, setCurrentId }) {
 
-  const posts = useSelector((state)=> state.posts )
-
-
   const classes = useStyles();
-
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -39,14 +37,20 @@ function Post({ post, setCurrentId }) {
     return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
   };
 
+  console.log(post.message)
+  const openPost = () => {
+    history.push(`/posts/${post._id}`)
+
+  }
+
     return ( 
-        <Card className={classes.card}>
+        <Card className={classes.card} raised elevation={6}>
 
           <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
 
           <div className={classes.overlay}>
-            <Typography variant="h6">{post.name}</Typography>
-            <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
+            <Typography className={classes.author}>{post.name}</Typography>
+            <Typography className={classes.author}>{moment(post.createdAt).fromNow()}</Typography>
           </div>
           {(user?.result?._id === post?.creator) && (
           <div className={classes.overlay2}>
@@ -58,12 +62,15 @@ function Post({ post, setCurrentId }) {
           )}
 
           <div className={classes.details}>
-            <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag}`)}</Typography>
+            <Typography color="textSecondary">{post.tags.map((tag) => `#${tag}`)}</Typography>
           </div>
-          <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
+          <Typography className={classes.title} gutterBottom onClick={openPost}>{post.title}</Typography>
 
           <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
+            <Typography className={classes.text} color="textSecondary" component="p"> 
+                {post.message.slice(0,300)}...
+                <Typography className={classes.readMore} variant="body2" gutterBottom onClick={openPost}>Read more</Typography>            
+            </Typography>
           </CardContent>
 
           <CardActions className={classes.cardActions}>
@@ -73,7 +80,7 @@ function Post({ post, setCurrentId }) {
             </Button>
             {(user?.result?._id === post?.creator) && (
 
-            <Button size="small" color="primary" onClick={handleDelete}>
+            <Button size="small" className={classes.readMore} color="primary" onClick={handleDelete}>
               <DeleteIcon fontSize="small"/>
               Delete
             </Button>
@@ -86,3 +93,5 @@ function Post({ post, setCurrentId }) {
 }
 
 export default Post;
+
+// .filter((item, idx) => idx < 50)

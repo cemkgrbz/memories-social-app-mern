@@ -11,21 +11,23 @@ function Posts({ setCurrentId }) {
     const classes = useStyles();
     
     console.log("🚀 ~ file: Posts.js:10 ~ Posts ~ posts", posts)
+
+
     return ( 
         <>
-            {/* <h1>POSTS</h1>
-            <Post />
-            <Post /> */}
+        
             {!posts.length ? <CircularProgress /> : (
                 <Grid className={classes.container} container alignItems="stretch" spacing={3}>
-                    {posts.map((post) => (
-                        <Grid key={post._id} item xs={12} sm={6}>
+                    {posts.slice(0).reverse().map((post) => (
+                        <Grid key={post._id} item xs={12} sm={12} md={6} lg={6}>
                             <Post post={post} setCurrentId={setCurrentId}/>
                         </Grid>
                     ))}
 
                 </Grid>
             )}
+
+
         </>
      );
 }

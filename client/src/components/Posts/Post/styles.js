@@ -20,6 +20,7 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
+
   },
   overlay: {
     position: 'absolute',
@@ -43,10 +44,29 @@ export default makeStyles({
   },
   title: {
     padding: '0 16px',
+    cursor:"pointer",
+    fontFamily: 'Josefin Sans',
+    fontSize: '1.5rem'
   },
+
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
   },
+  readMore: {
+    fontSize: "1rem",
+    fontWeight: "bold",
+    marginTop: "1rem",
+    textAlign: "right",
+    cursor:"pointer",
+    fontFamily: 'Josefin Sans',
+  },
+  text: {
+    fontFamily: 'Josefin Sans',
+  },
+  author: {
+    fontFamily: 'Josefin Sans',
+    fontSize: '1.3rem'
+  }
 });
