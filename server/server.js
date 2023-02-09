@@ -27,6 +27,9 @@ app.use(cors());
 app.use("/posts", postRoutes)
 app.use("/user", userRoutes)
 
+app.get('/', (req,res) => {
+    res.send('APP IS RUNNING')
+})
 
 const port = process.env.PORT || 4003
 app.listen(port, () => console.log('Server is up and running at port', port))
