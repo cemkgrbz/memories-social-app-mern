@@ -11,7 +11,6 @@ import CommentSection from './CommentSection'
 const PostDetails = () => {
 
     const post = useSelector((state) => state.posts);
-    console.log("🚀 ~ file: PostDetails.jsx:13 ~ PostDetails ~ post", post)
     const dispatch = useDispatch();
     const history = useHistory();
     const classes = useStyles();
@@ -43,8 +42,6 @@ const PostDetails = () => {
             <Typography gutterBottom className={classes.text}>{post.message}</Typography>
             <Typography className={classes.author}>Created by: {post.name}</Typography>
             <Typography className={classes.author}>{moment(post.createdAt).fromNow()}</Typography>
-            <Divider style={{ margin: '20px 0' }} />
-            {/* <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography> */}
             <Divider style={{ margin: '20px 0' }} />
             <CommentSection post={post} />
             <Divider style={{ margin: '20px 0' }} />

@@ -37,7 +37,6 @@ function Post({ post, setCurrentId }) {
     return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
   };
 
-  console.log(post.message)
   const openPost = () => {
     history.push(`/posts/${post._id}`)
 

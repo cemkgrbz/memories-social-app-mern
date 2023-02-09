@@ -17,6 +17,12 @@ export default (posts = [], action) => {
         case 'FETCH_POST':
             return action.payload;
 
+        case 'COMMENT':
+            return posts.map((post) => {
+                if (post._id === action.payload._id) return action.payload;
+                return post;
+            }); 
+
         default:
             return posts;    
     
@@ -24,4 +30,3 @@ export default (posts = [], action) => {
 
 
 }
-

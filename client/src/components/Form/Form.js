@@ -51,7 +51,7 @@ function Form({ currentId, setCurrentId }) {
         return (
             <Paper className={classes.paper}>
                 <Typography variant="h6" align="center">
-                    Please Sign In!
+                    Please sign in to create a post!
                 </Typography>
             </Paper>
         )
