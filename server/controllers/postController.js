@@ -7,7 +7,7 @@ export const getPost = async (req, res) => {
 
     try {
         const post = await PostMessage.findById(id);
-        console.log("🚀 ~ file: postController.js:10 ~ getPost ~ post", post)
+        // console.log("🚀 ~ file: postController.js:10 ~ getPost ~ post", post)
         res.status(200).json(post)
 
     } catch (error) {

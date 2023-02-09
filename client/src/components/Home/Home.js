@@ -25,7 +25,9 @@ function Home() {
 
     return ( <>
         <div className={classes.banner}>
-        Let's improve our Blog together. Feel free to tell us some road stories!
+            <span className={classes.span}>
+            WANDERLUST - (n.) a strong desire for or impulse to wander or travel and explore the world
+            </span>
         </div>
         <Grow in>
             <Container>

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import banner from './images/banner.png';
+import banner from './images/bg-banner.jpg';
 
 export default makeStyles((theme) => ({
   appBar: {
@@ -23,9 +23,16 @@ export default makeStyles((theme) => ({
   },
   banner: {
     margin: "2rem",
-    border: "1px solid white",
-    padding: "3rem",
-    color: "white",
-    backgroundImage: `url(${banner})`
+    padding: "1rem",
+    color: "#4F0317",
+    backgroundImage: `url(${banner})`,
+    backgroundSize: "cover",
+    textAlign: "center",
+    fontSize: "1.5rem",
+    borderRadius: "10px",
+    textShadow: '1px 1px 5px #FFC2D7'
+  },
+  span: {
+    backgroundColor: "#F6F6F4"
   }
 }));
