@@ -1,15 +1,15 @@
-import * as api from '../api/index.js';
+import * as api from "../api/index.js";
 
 export const signin = (formData, history) => async (dispatch) => {
   try {
     const { data } = await api.signIn(formData);
 
-    dispatch({ type: 'AUTH', data });
+    dispatch({ type: "AUTH", data });
 
-    history.push('/');
+    history.push("/");
   } catch (error) {
     console.log(error);
-    alert("Wrong email or password!!")
+    alert("Wrong email or password!!");
   }
 };
 
@@ -17,9 +17,9 @@ export const signup = (formData, history) => async (dispatch) => {
   try {
     const { data } = await api.signUp(formData);
 
-    dispatch({ type: 'AUTH', data });
+    dispatch({ type: "AUTH", data });
 
-    history.push('/');
+    history.push("/");
   } catch (error) {
     console.log(error.message);
   }
